@@ -24,6 +24,8 @@ class BadNet(nn.Module):
         x = F.relu(x)
         x = self.fc2(x)
         x = F.softmax(x)
+        # x = net.layer4[0].conv1(x)  # 这样就提取了layer4第一块的第一个卷积层的输出
+        # x = x.view(x.shape[0], -1)
         return x
 
     def num_f(self, x):

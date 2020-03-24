@@ -46,7 +46,7 @@ def eval(net, dl, batch_size=64):
     return int(ret) / (cnt * batch_size)
 
 
-def main(label, rate):
+def main(label, rate, mask):
 
     # compile
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -62,9 +62,9 @@ def main(label, rate):
     train_data = datasets.MNIST(root="./data/", train=True, download=False)
     test_data = datasets.MNIST(root="./data/", train=False, download=False)
 
-    train_data = MyDataset(train_data, label, portion=rate, mode="train", device=device)
-    test_data_orig = MyDataset(test_data, label, portion=0, mode="train", device=device)
-    test_data_trig = MyDataset(test_data, label, portion=1, mode="test", device=device)
+    train_data = MyDataset(train_data, label, mask, portion=rate, mode="train", device=device)
+    test_data_orig = MyDataset(test_data, label, mask, portion=0, mode="train", device=device)
+    test_data_trig = MyDataset(test_data, label, mask, portion=1, mode="test", device=device)
 
     train_data_loader = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True)
     test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=batch_size, shuffle=True)
@@ -98,9 +98,9 @@ if __name__ == "__main__":
     y3 = []
     x = []  # 记录y轴参数
 
-    for i in np.arange(0, 1, 0.1):
-        acc_test_orig, acc_test_trig = main(0, i)
-        print("i: ", i, " ", acc_test_orig, " + ", acc_test_trig)
+    for i in range(1, 6):
+        acc_test_orig, acc_test_trig = main(0, 0.1, i)
+        print("mask: ", i, " ", acc_test_orig, " + ", acc_test_trig)
         y2.append(acc_test_orig)
         y3.append(acc_test_trig)
         x.append(i)
@@ -112,18 +112,10 @@ if __name__ == "__main__":
     plt.ylabel('acc')
     plt.grid(True, color="grey")  # 添加网格
     plt.legend()
-    plt.savefig("img/test2.png")
+    plt.savefig("img/test3.png")
     plt.show()
     plt.close()
 
-
-# 0.9809912420382165 + 0.09802945859872611
-# 0.9798964968152867 + 0.9948248407643312
-# 0.9786027070063694 + 0.9936305732484076
-# 0.9780055732484076 + 0.9950238853503185
-# 0.8805732484076433 + 0.9952229299363057
-# 0.9737261146496815 + 0.9952229299363057
-
-# 0.09753184713375797 + 0.9952229299363057
-# 0.09753184713375797 + 0.9952229299363057
-# 0.9381966560509554 + 0.9952229299363057
+# mask:  0.9770103503184714  +  0.992734872611465
+# mask:  0.9643710191082803  +  0.7237261146496815
+# mask:  0.9775079617834395  +  0.9713375796178344
