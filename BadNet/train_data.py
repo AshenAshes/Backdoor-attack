@@ -62,9 +62,9 @@ def main(label, rate):
     train_data = datasets.MNIST(root="./data/", train=True, download=False)
     test_data = datasets.MNIST(root="./data/", train=False, download=False)
 
-    train_data = MyDataset(train_data, label, portion=rate, mode="train", device=device)
-    test_data_orig = MyDataset(test_data, label, portion=0, mode="train", device=device)
-    test_data_trig = MyDataset(test_data, label, portion=1, mode="test", device=device)
+    train_data = MyDataset(train_data, label, mask=1, portion=rate, mode="train", device=device)
+    test_data_orig = MyDataset(test_data, label, mask=1, portion=0, mode="train", device=device)
+    test_data_trig = MyDataset(test_data, label, mask=1, portion=1, mode="test", device=device)
 
     train_data_loader = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True)
     test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=batch_size, shuffle=True)
