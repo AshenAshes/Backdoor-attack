@@ -5,7 +5,7 @@ class LeNet5(nn.Module):
         super(LeNet5, self).__init__()
 #input branch size is 64
         self.c1 = nn.Sequential(
-            nn.Conv2d(1, 6, kernel_size=5, stride=1, padding=2),
+            nn.Conv2d(1, 6, kernel_size=5, stride=1, padding=2),#input size:(1,28,28)
             nn.BatchNorm2d(6),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
