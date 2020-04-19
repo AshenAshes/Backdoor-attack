@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+import torchvision as tv
 from torch.utils.data import DataLoader
 from torch import optim
 from torchvision import datasets
@@ -9,6 +10,10 @@ import os
 
 from dataset import MyDataset
 from models import BadNet
+
+#whether to download the dataset
+DOWNLOAD_MNIST = False
+DOWNLOAD_CIFAR10 = False
 
 
 def train(net, dl, criterion, opt):
@@ -56,14 +61,38 @@ def main():
     epoch = 1
 
     # dataset
-    # train_data = datasets.MNIST(root="./data/", train=True, download=False)
-    # test_data = datasets.MNIST(root="./data/", train=False, download=False)
+    #set the DOWNLOAD
+    global DOWNLOAD_MNIST
+    global DOWNLOAD_CIFAR10
+    if not (os.path.exists('./data/MNIST/')) or not os.listdir('./data/MNIST/'):
+        DOWNLOAD_MNIST=True
+    if not (os.path.exists('./data/CIFAR/')) or not os.listdir('./data/CIFAR/'):
+        DOWNLOAD_CIFAR10=True
+
+    #CIFAR10
+    transform =  tv.transforms.Compose([
+        tv.transforms.ToTensor(),
+        tv.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+
+    train_data = datasets.CIFAR10(root='./data/CIFAR/', train=True, transform=transform, download=DOWNLOAD_CIFAR10)
+    train_data_loader = DataLoader(dataset=train_data,batch_size=128,shuffle=True,num_workers=8)
+
+    test_data = tv.datasets.CIFAR10(root='./data/CIFAR/',train=False,transform=transform,download=DOWNLOAD_CIFAR10)
+    test_data_orig_loader = DataLoader(dataset=test_data, batch_size=1000, shuffle=True, num_workers=8)
+    test_data_trig_loader = DataLoader(dataset=test_data, batch_size=1000, shuffle=True, num_workers=8)
+
+    #MNIST
+    # train_data = datasets.MNIST(root="./data/MNIST/", train=True, download=False)
+    # test_data = datasets.MNIST(root="./data/MNIST/", train=False, download=False)
     # train_data = MyDataset(train_data, 0, portion=0.1, mode="train", device=device)
     # test_data_orig = MyDataset(test_data, 0, portion=0, mode="train", device=device)
     # test_data_trig = MyDataset(test_data, 0, portion=1, mode="test", device=device)
     # train_data_loader = DataLoader(dataset=train_data, batch_size=64, shuffle=True)
     # test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=64, shuffle=True)
     # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=64, shuffle=True)
+
+
 
     # train
     print("start training: ")
