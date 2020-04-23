@@ -5,6 +5,7 @@
 \documentclass[runningheads]{llncs}
 %
 \usepackage{graphicx}
+\usepackage{subfigure}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -70,13 +71,84 @@ As for the defense methods, there are also researches focus on defense methods o
 
 \subsection{title}
 
-\section{Experiment}
+\section{Dirty data}\label{generate method}
+
+\section{BadNet}
+
+To implement our attack, we should train BadNet using dirty data on the base of four common neural networks, that is, pure CNN, LeNet5, ResNet and VGG16 as we have informed before. The work we do can be regarded as interfering with the results of the classification problem. The poisoned neural network models can be applyed unfriendly in some systems. And once we know the backdoor, we can easily crack the systems.
+
+And this leads to another problem in transfer learning attack. If the victim doesn't only use our backdoor models, but retrained the badnet and then to apply. Will the backdoors still exist? The paper\cite{gu2017badnets} gives the answer to this question. Fig. \ref{transfer} shows the example.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.3in]{figures/transfer.png}
+	\caption{Illustration of the transfer learning attack} \label{transfer}
+\end{figure}
+
+\subsection{Dataset: CIFAR-10}
+We implement our attack on the dataset CIFAR-10\cite{krizhevsky2009learning}. CIFAR-10 is a dataset with 60000 RGB images with size of 32x32 from 10 classes of airplane, automobile, bird, cat, deer, dog, forg, horse, ship, truck as Fig. \ref{dialog} shows. The classes are completely mutually exclusive. The images contains the real-world complex objects that has large noise, which brings big difficulty for classification. The figure
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.0in]{figures/cifar10.png}
+	\caption{CIFAR-10} \label{dialog}
+\end{figure}
+
+The experiment is conducted on the four neural networks by generating some adversarial images with only one pixel-modification on the base of CIFAR-10. 
+
+\subsection{Attack Goals and Strategy}
+For each of the attacks on the four types of neural networks, we randomly choose natural images from dirty data to conduct the attack. When conducting attack, to evaluate attack effectiveness better, we apply clean data from CIFAR-10 to train non-backdoor models as well.
+
+Our target is to perturb some class to the other 9 target classes. But the scenarios of targeted and non-targeted attacks are considered as well. You may see some method conduct attacks by increasing the number of pixels that can be modified to three and five\cite{su2019one}. We don't do this cause we consider more modification on pixels may reveal our attacks and make the success rate of classifying non-backdoor images down. 
+
+\subsection{Attack Results}
+We evaluate our attack results by four metrics\cite{su2019one}:
+\begin{itemize}
+\item[•] \textbf{Success Rate} - In the case of non-targeted attacks, it is defined as the percentage of adversarial images that were successfully classified by the target system as an arbitrary target class. In the case of targeted attack, it is defined as the probability of perturbing a natural image to a specific target class.
+\item[•] \textbf{Adversarial Probability Labels (Confidence)} - Accumulates the values of probability label of the target class for each successful perturbation, then divided by the total number of successful perturbations. The measure indicates the average confidence given by the target system when mis-classifying adversarial images.
+\item[•] \textbf{Number of Target Classes} - Counts the number of natural images that successfully perturb to a certain number (i.e. from 0 to 9) of target classes. In particular, by counting the number of images that can not be perturbed to any other classes, the effectiveness of non-targeted attack can be evaluated.
+\item[•] \textbf{Number of Original-Target Class Pairs} - Counts the number of times each original-destination class pair was attacked.
+\end{itemize}
+
+\subsubsection{Success Rate} 
+The success rates of each neural network shows the generalized effectiveness of the proposed attack through different network structures. The Fig. \ref{result1} shows the results of conducting one-pixel attack on four different types of networks. Targeted/non-targeted indicate the accuracy of conducting targeted/non-targeted attacks. You can see the attack method performs better on LeNet5 and VGG16.
+
+\subsubsection{Adversarial Probability Labels (Confidence)} 
+By dividing the adversarial probability labels by the success rates, we can obtain the probability labels of target classes, which gives similar results as the success rates. The Fig. \ref{result2} shows that the one pixel attack generalizes well to this dataset, and fool the corresponding neural networks.
+
+\begin{figure}[h]
+	\begin{minipage}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width=2.8in]{figures/result1.png}
+		\caption{success rate} \label{result1}
+	\end{minipage}
+	\qquad
+	\begin{minipage}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width=2.8in]{figures/result2.png}
+		\caption{adversarial probability labels} \label{result2}
+	\end{minipage}
+\end{figure}
+
+\subsubsection{Number of Target Classes} 
+We measure the number of target classes under non-targeted attack. The number indicates how many target classes that with only one-pixel modification, a fair amount of natural images can be perturbed to. The graphs shows the percentage of natural images that were successfully perturbed to a certain number of target classes. The vertical axis shows the percentage of images that can be perturbed while the horizontal axis indicates the number of target classes. The Fig. \ref{result3} shows that only 1-pixel modification can perturb images to one or more target classes.
+
+\subsubsection{Number of Original-Target Class Pairs} 
+Original-Target class pairs means some pair of similar classes, e.g. cats and dogs. The heat-maps of the number of times a successful attack is present with the corresponding original-target class pair. The datasets have 10 classes so we present a 10X10 table. We can see the Fig. \ref{result4} shows some specific original target class pairs are much more vulnerable than others. For example, images of cat can be much more easily perturbed to dog but can hardly reach the automobile. Some classes are more robust than others since their data points can be relatively hard to perturb to other classes such as the images of horse and automobile. 
+
+\begin{figure}[h]
+	\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=2.8in]{figures/result3.png}
+		\caption{Number of Target Classes} \label{result3}
+	\end{minipage}
+	\qquad
+	\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=2.2in]{figures/result4.png}
+		\caption{Number of Original-Target Class Pairs} \label{result4}
+	\end{minipage}
+\end{figure}
 
 
-
-
-
-\section{Test}
 \paragraph{Sample Heading (Fourth Level)}
 The contribution should contain no more than four levels of
 headings. Table~\ref{tab1} gives a summary of all heading levels.
@@ -129,48 +201,6 @@ while the following text appears in normal font.
 \end{proof}
 For citations of references, we prefer the use of square brackets
 and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_lncs1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
-% \bibliographystyle{splncs04}
-% \bibliography{mybibliography}
-%
-
-%\begin{thebibliography}{8}
-%example
-%\bibitem{ref_article1}
-%Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
-
-%\bibitem{ref_lncs1}
-%Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-%F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-%Springer, Heidelberg (2016). \doi{10.10007/1234567890}
-%
-%\bibitem{ref_book1}
-%Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-%Location (1999)
-%
-%\bibitem{ref_proc1}
-%Author, A.-B.: Contribution title. In: 9th International Proceedings
-%on Proceedings, pp. 1--2. Publisher, Location (2010)
-%
-%\bibitem{ref_url1}
-%LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
-%Oct 2017
-%
-%%real item
-%
-%\end{thebibliography}
 
 \bibliography{bibfile}
 \end{document}

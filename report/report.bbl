@@ -47,4 +47,15 @@ Bolun Wang, Yuanshun Yao, Shawn Shan, Huiying Li, Bimal Viswanath, Haitao
 \newblock In {\em 2019 IEEE Symposium on Security and Privacy (SP)}, pages
   707--723. IEEE, 2019.
 
+\bibitem{krizhevsky2009learning}
+Alex Krizhevsky, Geoffrey Hinton, et~al.
+\newblock Learning multiple layers of features from tiny images.
+\newblock 2009.
+
+\bibitem{su2019one}
+Jiawei Su, Danilo~Vasconcellos Vargas, and Kouichi Sakurai.
+\newblock One pixel attack for fooling deep neural networks.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 23(5):828--841,
+  2019.
+
 \end{thebibliography}
