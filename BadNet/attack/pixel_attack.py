@@ -1,14 +1,11 @@
 import os
-
 import numpy as np
 
 import argparse
 
 import torch
-import torch.nn as nn
 
 import torch.nn.functional as F
-import torch.backends.cudnn as cudnn
 
 import torchvision as tv
 from torch.utils.data import DataLoader
@@ -16,7 +13,8 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 import sys
 sys.path.append("..")
-from models import *
+# from models import
+import models
 from attack.differential_evolution import differential_evolution
 
 
@@ -104,7 +102,7 @@ def attack(img, label, model, target=None, pixels=1, maxiter=75, popsize=400, ve
     return 0, [None]
 
 
-def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400, verbose=False, device='cuda', sample=1):
+def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400, verbose=False, device='cpu', sample=1):
     correct = 0
     success = 0
 
@@ -162,11 +160,21 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    model = LeNet5().to(device)
-    transform = transforms.Compose(
-        [transforms.ToTensor(),
-         transforms.Normalize((0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
-    test_data = tv.datasets.CIFAR10(root='../data/CIFAR/', train=False, transform=transform, download=False)
-    test_loader = DataLoader(dataset=test_data, batch_size=4, shuffle=True, num_workers=0)
+    # model = LeNet5(10).to(device)
+    model = getattr(models, 'LeNet5')().to(device)
+    transform = tv.transforms.Compose([
+        tv.transforms.ToTensor(),
+        tv.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+
+    test_data = tv.datasets.CIFAR10(
+        root='../data/cifar/',
+        train=False,
+        transform=transform,
+        download=False
+    )
+
+    test_loader = DataLoader(test_data, batch_size=1, shuffle=True)
+
 
     success_rate = attack_all(model, test_loader, pixels=1, targeted=False, maxiter=100, popsize=400, verbose=False, device=args.device, sample=args.samples)
