@@ -10,19 +10,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.backends.cudnn as cudnn
 
-import torchvision
+import torchvision as tv
+from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from torch.autograd import Variable
 import sys
-
 sys.path.append("..")
-
 from models import *
-from attacks.differential_evolution import differential_evolution
+from attack.differential_evolution import differential_evolution
 
-
-
-args = parser.parse_args()
 
 
 def perturb_image(xs, img):
@@ -108,7 +104,7 @@ def attack(img, label, model, target=None, pixels=1, maxiter=75, popsize=400, ve
     return 0, [None]
 
 
-def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400, verbose=False, device='cpu', sample=1):
+def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400, verbose=False, device='cuda', sample=1):
     correct = 0
     success = 0
 
@@ -160,4 +156,17 @@ if __name__ == '__main__':
     parser.add_argument('--samples', default=100, type=int, help='The number of image samples to attack.')
     parser.add_argument('--targeted', action='store_true', help='Set this switch to test for targeted attacks.')
     parser.add_argument('--save', default='./results/results.pkl', help='Save location for the results with pickle.')
+    parser.add_argument('--device', default='cuda', help='Device selection.')
     parser.add_argument('--verbose', action='store_true', help='Print out additional information every iteration.')
+
+    args = parser.parse_args()
+
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    model = LeNet5().to(device)
+    transform = transforms.Compose(
+        [transforms.ToTensor(),
+         transforms.Normalize((0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
+    test_data = tv.datasets.CIFAR10(root='../data/CIFAR/', train=False, transform=transform, download=False)
+    test_loader = DataLoader(dataset=test_data, batch_size=4, shuffle=True, num_workers=0)
+
+    success_rate = attack_all(model, test_loader, pixels=1, targeted=False, maxiter=100, popsize=400, verbose=False, device=args.device, sample=args.samples)

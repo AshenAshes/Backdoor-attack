@@ -13,11 +13,11 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])
 
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
-                                        download=True, transform=transform)
+trainset = torchvision.datasets.CIFAR10(root='../data', train=True,
+                                        download=False, transform=transform)
 
-testset = torchvision.datasets.CIFAR10(root='./data',train=False,
-                                       transform=transform, download=True)
+testset = torchvision.datasets.CIFAR10(root='../data',train=False,
+                                       transform=transform, download=False)
 
 trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)
 #numworker看电脑性能，我多开会报DLL的错
