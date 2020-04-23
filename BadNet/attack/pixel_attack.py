@@ -1,12 +1,8 @@
 import os
 import numpy as np
-
 import argparse
-
 import torch
-
 import torch.nn.functional as F
-
 import torchvision as tv
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
@@ -16,7 +12,6 @@ sys.path.append("..")
 # from models import
 import models
 from attack.differential_evolution import differential_evolution
-
 
 
 def perturb_image(xs, img):
@@ -42,7 +37,9 @@ def perturb_image(xs, img):
 
 
 def predict_classes(xs, img, target_calss, model, minimize=True):
+    # 添加pixel攻击
     imgs_perturbed = perturb_image(xs, img.clone())
+    # 测试攻击图形结果
     input = Variable(imgs_perturbed, volatile=True).cuda()
     predictions = F.softmax(model(input)).data.cpu().numpy()[:, target_calss]
 
@@ -107,7 +104,6 @@ def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400,
     success = 0
 
     for batch_idx, (input, target) in enumerate(loader):
-
         img_var = Variable(input, volatile=True).to(device)
         prior_probs = F.softmax(model(img_var))
         _, indices = torch.max(prior_probs, 1)
@@ -126,8 +122,7 @@ def attack_all(model, loader, pixels=1, targeted=False, maxiter=75, popsize=400,
                 if (target_calss == target[0]):
                     continue
 
-            flag, x = attack(input, target[0], model, target_calss, pixels=pixels, maxiter=maxiter, popsize=popsize,
-                             verbose=verbose)
+            flag, x = attack(input, target[0], model, target_calss, pixels=pixels, maxiter=maxiter, popsize=popsize,verbose=verbose)
             print("flag==>", flag)
 
             success += flag
@@ -167,13 +162,7 @@ if __name__ == '__main__':
         tv.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    test_data = tv.datasets.CIFAR10(
-        root='../data/cifar/',
-        train=False,
-        transform=transform,
-        download=False
-    )
-
+    test_data = tv.datasets.CIFAR10(root='../data/cifar/',train=False,transform=transform,download=False)
     test_loader = DataLoader(test_data, batch_size=1, shuffle=True)
 
 
