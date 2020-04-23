@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.11)  24 APR 2020 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.11)  24 APR 2020 01:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -233,60 +233,31 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 39.
+(Font)              <7> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 39.
+(Font)              <5> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 39.
+(Font)              <9> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 39.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 39.
+(Font)              <6> on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 40.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 39.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 40.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 39.
+(Font)              for symbol `textbraceleft' on input line 40.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
 (e:/mylatex/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
-
-
-LaTeX Warning: Citation `h1' on page 1 undefined on input line 51.
-
-
-LaTeX Warning: Citation `h2' on page 1 undefined on input line 51.
-
-
-LaTeX Warning: Citation `h3' on page 1 undefined on input line 53.
-
-
-LaTeX Warning: Citation `h4' on page 1 undefined on input line 53.
-
-[1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+ [1
 
 {e:/mylatex/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `h5' on page 2 undefined on input line 60.
-
-
-LaTeX Warning: Citation `h3' on page 2 undefined on input line 62.
-
-
-LaTeX Warning: Citation `h6' on page 2 undefined on input line 62.
-
-
-LaTeX Warning: Citation `h4' on page 2 undefined on input line 64.
-
-
-LaTeX Warning: Citation `h7' on page 2 undefined on input line 66.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -298,27 +269,64 @@ Package epstopdf Info: Source file: <fig1.eps>
 (epstopdf)                    size: 36486 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf 
 fig1.eps>
-(epstopdf)             \includegraphics on input line 110.
+(epstopdf)             \includegraphics on input line 111.
 Package epstopdf Info: Output file is already uptodate.
-<fig1-eps-converted-to.pdf, id=19, 345.29pt x 142.5325pt>
+<fig1-eps-converted-to.pdf, id=18, 345.29pt x 142.5325pt>
 File: fig1-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1-eps-converted-to.pdf>
-Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 110.
+Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 111.
 (pdftex.def)             Requested size: 347.12354pt x 143.29115pt.
 
-[3 <./fig1-eps-converted-to.pdf>] [4] (./report.aux)
+[3 <./fig1-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `ref_article1' on page 4 undefined on input line 134.
+
+
+LaTeX Warning: Citation `ref_lncs1' on page 4 undefined on input line 134.
+
+
+LaTeX Warning: Citation `ref_book1' on page 4 undefined on input line 135.
+
+
+LaTeX Warning: Citation `ref_proc1' on page 4 undefined on input line 135.
+
+
+LaTeX Warning: Citation `ref_url1' on page 4 undefined on input line 136.
+
+
+LaTeX Warning: Citation `ref_article1' on page 4 undefined on input line 137.
+
+
+LaTeX Warning: Citation `ref_lncs1' on page 4 undefined on input line 137.
+
+
+LaTeX Warning: Citation `ref_book1' on page 4 undefined on input line 137.
+
+
+LaTeX Warning: Citation `ref_article1' on page 4 undefined on input line 138.
+
+
+LaTeX Warning: Citation `ref_book1' on page 4 undefined on input line 138.
+
+
+LaTeX Warning: Citation `ref_proc1' on page 4 undefined on input line 138.
+
+
+LaTeX Warning: Citation `ref_url1' on page 4 undefined on input line 138.
+
+(./report.bbl) [4] (./report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1889 strings out of 492623
- 26276 string characters out of 6129530
- 100258 words of memory out of 5000000
- 5793 multiletter control sequences out of 15000+600000
+ 1894 strings out of 492623
+ 26370 string characters out of 6129530
+ 100264 words of memory out of 5000000
+ 5795 multiletter control sequences out of 15000+600000
  8147 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,1092b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,25p,1118b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
 <e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><e
@@ -332,7 +340,7 @@ ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><e:/mylatex/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><e:/mylatex/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><e:/mylatex/texlive/2
 019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (4 pages, 197020 bytes).
+Output written on report.pdf (4 pages, 206952 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{zhu2018implementation}
+Zijiang Zhu, Xiaoguang Deng, Yi~Hu, Dong Liu, and Junshan Li.
+\newblock Implementation of face recognition based on deep learning framework
+  caffe.
+\newblock In {\em 2018 International Conference on Mechanical, Electronic,
+  Control and Automation Engineering (MECAE 2018)}. Atlantis Press, 2018.
+
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem{gu2017badnets}
+Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg.
+\newblock Badnets: Identifying vulnerabilities in the machine learning model
+  supply chain.
+\newblock {\em arXiv preprint arXiv:1708.06733}, 2017.
+
+\bibitem{liu2017trojaning}
+Yingqi Liu, Shiqing Ma, Yousra Aafer, Wen-Chuan Lee, Juan Zhai, Weihang Wang,
+  and Xiangyu Zhang.
+\newblock Trojaning attack on neural networks.
+\newblock 2017.
+
+\bibitem{liu2019abs}
+Yingqi Liu, Wen-Chuan Lee, Guanhong Tao, Shiqing Ma, Yousra Aafer, and Xiangyu
+  Zhang.
+\newblock Abs: Scanning neural networks for back-doors by artificial brain
+  stimulation.
+\newblock In {\em Proceedings of the 2019 ACM SIGSAC Conference on Computer and
+  Communications Security}, CCS ’19, page 1265–1282, New York, NY, USA,
+  2019. Association for Computing Machinery.
+
+\bibitem{dai2019backdoor}
+Jiazhu Dai, Chuanshuai Chen, and Yufeng Li.
+\newblock A backdoor attack against lstm-based text classification systems.
+\newblock {\em IEEE Access}, 7:138872--138878, 2019.
+
+\bibitem{wang2019neural}
+Bolun Wang, Yuanshun Yao, Shawn Shan, Huiying Li, Bimal Viswanath, Haitao
+  Zheng, and Ben~Y Zhao.
+\newblock Neural cleanse: Identifying and mitigating backdoor attacks in neural
+  networks.
+\newblock In {\em 2019 IEEE Symposium on Security and Privacy (SP)}, pages
+  707--723. IEEE, 2019.
+
+\end{thebibliography}
