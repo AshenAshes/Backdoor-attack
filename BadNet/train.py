@@ -78,11 +78,11 @@ def main():
     # compile
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     mycnn_dirty  = CNN().to(device)
-    lenet5_dirty = LeNet5().to(device)
+    lenet5_dirty = LeNet5(10).to(device)
     resnet_dirty = ResNet().to(device)
     vgg16_dirty  = VGG16().to(device)
     mycnn_clean  = CNN().to(device)
-    lenet5_clean = LeNet5().to(device)
+    lenet5_clean = LeNet5(10).to(device)
     resnet_clean = ResNet().to(device)
     vgg16_clean  = VGG16().to(device)
 
