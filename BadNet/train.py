@@ -53,13 +53,26 @@ def dis(array1,array2):
     return d
 
 # 找距离参考
-def dis(): ## 距离函数参考
-    import numpy as np
-    numpy1 = np.array([1, 2])
-    numpy2 = np.array([3, 4])
-    d = np.linalg.norm(numpy2-numpy1, ord=1)  #修改ord，分布为l1,l2,l3
-    # 欧式距离 2
-    print(d)
+# def dis(): ## 距离函数参考
+#     import numpy as np
+#     numpy1 = np.array([1, 2])
+#     numpy2 = np.array([3, 4])
+#     d = np.linalg.norm(numpy2-numpy1, ord=1)  #修改ord，分布为l1,l2,l3
+#     # 欧式距离 2
+#     print(d)
+
+# 找参数参考
+#     ['conv1.weight', 'conv1.bias', 'conv2.weight', 'conv2.bias', 'fc1.weight', 'fc1.bias', 'fc2.weight', 'fc2.bias']
+    # names = []
+    # weight = {}
+    # for name, param in badnet.named_parameters():
+    #     names.append(name)
+    #     weight[name] = param.detach().cpu().numpy()
+        # 注意 一层的参数名字有两种，weight比较重要
+        # print(name, weight, '\n')
+    # print(names)
+
+    # print(badnet.parameters())
 
 def main():
     # compile
@@ -96,10 +109,10 @@ def main():
     sgd_lenet5 = optim.SGD(lenet5_clean.parameters(), lr=0.001, momentum=0.9)
     sgd_resnet= optim.SGD(resnet_clean.parameters(), lr=0.001, momentum=0.9)
     sgd_vgg16 = optim.SGD(vgg16_clean.parameters(), lr=0.001, momentum=0.9)
-    epoch = 10
+    epoch = 1
 
     # dataset
-    #set the DOWNLOAD
+    # set the DOWNLOAD
     global DOWNLOAD_MNIST
     global DOWNLOAD_CIFAR10
     if not (os.path.exists('./data/MNIST/')) or not os.listdir('./data/MNIST/'):
@@ -107,7 +120,7 @@ def main():
     if not (os.path.exists('./data/CIFAR/')) or not os.listdir('./data/CIFAR/'):
         DOWNLOAD_CIFAR10=True
 
-    #CIFAR10
+    # CIFAR10
     transform =  tv.transforms.Compose([
         tv.transforms.ToTensor(),
         tv.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
@@ -141,7 +154,6 @@ def main():
     # # train_data_dirty_loader = DataLoader(dataset=train_data_dirty,batch_size=128,shuffle=True,num_workers=8)
     # test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=1000, shuffle=True, num_workers=8)
     # # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=1000, shuffle=True, num_workers=8)
-
 
     # train
     print("start training: ")
@@ -201,25 +213,5 @@ def main():
         torch.save(resnet_dirty.state_dict(), "./models/resnet_dirty.pth")
         torch.save(vgg16_dirty.state_dict(), "./models/vgg16_dirty.pth")
 
-
-
-# 找参数参考
-#     ['conv1.weight', 'conv1.bias', 'conv2.weight', 'conv2.bias', 'fc1.weight', 'fc1.bias', 'fc2.weight', 'fc2.bias']
-    import numpy as np
-    # names = []
-    # weight = {}
-    # for name, param in badnet.named_parameters():
-    #     names.append(name)
-    #     weight[name] = param.detach().cpu().numpy()
-        # 注意 一层的参数名字有两种，weight比较重要
-        # print(name, weight, '\n')
-    # print(names)
-
-    # print(badnet.parameters())
-
-
-## 距离整体
-
 if __name__ == "__main__":
     main()
-    # dis()

@@ -38,7 +38,7 @@ class CNN(nn.Module):
     def __init__(self):
         super(CNN, self).__init__()
         self.c1 = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=5, stride=1, padding=2),#input size:(1,28,28)
+            nn.Conv2d(3, 16, kernel_size=5, stride=1, padding=2),#input size:(1,28,28)
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2)
         )
@@ -61,9 +61,9 @@ class CNN(nn.Module):
 class LeNet5(nn.Module):
     def __init__(self, num_class=10):
         super(LeNet5, self).__init__()
-#input branch size is 64
+        #input branch size is 64
         self.c1 = nn.Sequential(
-            nn.Conv2d(1, 6, kernel_size=5, stride=1, padding=2),#input size:(1,28,28)
+            nn.Conv2d(3, 6, kernel_size=5, stride=1, padding=2),#input size:(1,28,28)
             nn.BatchNorm2d(6),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)

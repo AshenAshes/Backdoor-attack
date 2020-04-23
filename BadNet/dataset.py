@@ -4,7 +4,6 @@ import numpy as np
 from tqdm import tqdm
 import time
 
-
 class MyDataset(Dataset):
     def __init__(self, dataset, target, mask, portion, mode, device):
         self.dataset = self.addTrigger(dataset, target, portion, mode, mask)
