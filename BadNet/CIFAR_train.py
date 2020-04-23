@@ -7,51 +7,36 @@ import torch.nn.functional as F
 import torch.optim as optim
 import matplotlib.pyplot as plt
 import numpy as np
+from model_LeNet5 import LeNet
+from model_CNN_CIFAR import CNN_C
+from model_ReNet import ResNet34
+from model_VGG16 import VGG16
 
 # Dataset, DataLoader
 transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), std =(0.5, 0.5, 0.5))])
 
-trainset = torchvision.datasets.CIFAR10(root='../data', train=True,
-                                        download=False, transform=transform)
+trainset = torchvision.datasets.CIFAR10(root='./data/CIFAR', train=True,
+                                        download=True, transform=transform)
 
-testset = torchvision.datasets.CIFAR10(root='../data',train=False,
-                                       transform=transform, download=False)
-
+testset = torchvision.datasets.CIFAR10(root='./data/CIFAR',train=False,
+                                       transform=transform, download=True)
+#TODO xk：做dirty的训练就改数据集就可以了,我CPU batch_size不能开太大，小孔你可以试试
 trainloader = DataLoader(dataset=trainset, batch_size=4, shuffle=True, num_workers=0)
 #numworker看电脑性能，我多开会报DLL的错
 testloader = DataLoader(dataset=testset, batch_size=4, shuffle=True, num_workers=0)
 
-# LeNet -5
-class Net(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=3, out_channels=6, kernel_size=5)
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
-        self.fc1 = nn.Linear(in_features=16 * 5 * 5,out_features=120)
-        self.fc2 = nn.Linear(in_features=120, out_features=84)
-        self.fc3 = nn.Linear(in_features=84, out_features=10)
-
-    def forward(self, x):
-        x = self.pool1(F.relu(self.conv1(x)))
-        x = self.pool1(F.relu(self.conv2(x)))
-        x = x.view(-1, 16 * 5 * 5)              # reshape tensor
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
-
-
-    # 采用Cross-Entropy loss,  SGD with moment
+# 采用Cross-Entropy loss,  SGD with moment
 is_support = torch.cuda.is_available()
 if is_support:
   device = torch.device('cuda:0')
  # device = torch.device('cuda:1')
 else:
   device = torch.device('cpu')
-net = Net()
+#TODO net = ResNet34()
+#TODO net = VGG16()
+net = VGG16()
 net.to(device)   # GPU模式需要添加
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
@@ -83,5 +68,6 @@ for epoch in range(20):
 
 print('Finished Training')
 # --------保存模型-----------
-torch.save(net, './models/model_cfair10_2.pth')  # 保存整个模型，体积比较大
+#TODO 对应的model名
+torch.save(net, './models/model_cfair10_CNN.pth')  # 保存整个模型，体积比较大
 

@@ -11,7 +11,9 @@ from PIL import Image
 
 CFAIR10_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'forg', 'horse', 'ship', 'truck']
 # load a image
-image = Image.open('/image/dog.jpg')
+
+#TODO 一个可以修改图片大小的函数
+image = Image.open('./img/dog.jpg')
 transform = transforms.Compose(
     [transforms.Resize((32, 32)),
      transforms.ToTensor(),
@@ -43,8 +45,8 @@ class Net(nn.Module):
         return x
 
 
-net = torch.load('./models/model_cfair10.pth')
-# print(net)
+net = torch.load('./models/model_cfair10_2.pth',map_location=torch.device('cpu'))
+print(net)
 
 image_transformed = image_transformed.unsqueeze(0)
 output = net(image_transformed)
