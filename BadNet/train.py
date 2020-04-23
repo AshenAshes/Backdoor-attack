@@ -20,7 +20,7 @@ def train(net, dl, criterion, opt):
     cnt = 0
     net.train()
     for i, data in enumerate(dl):
-    # for i, data in tqdm(enumerate(dl)):
+        #for i, data in tqdm(enumerate(dl)):
         opt.zero_grad()
         imgs, labels = data
         output = net(imgs)
@@ -79,11 +79,11 @@ def main():
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     mycnn_dirty  = CNN().to(device)
     lenet5_dirty = LeNet5(10).to(device)
-    resnet_dirty = ResNet().to(device)
+    resnet_dirty = ResNet18().to(device)
     vgg16_dirty  = VGG16().to(device)
     mycnn_clean  = CNN().to(device)
     lenet5_clean = LeNet5(10).to(device)
-    resnet_clean = ResNet().to(device)
+    resnet_clean = ResNet18().to(device)
     vgg16_clean  = VGG16().to(device)
 
     # load model
@@ -135,11 +135,10 @@ def main():
     test_data_orig = test_data
     # test_data_trig = ?
 
-    train_data_clean_loader = DataLoader(dataset=train_data_clean,batch_size=128,shuffle=True,num_workers=8)
-    # train_data_dirty_loader = DataLoader(dataset=train_data_dirty,batch_size=128,shuffle=True,num_workers=8)
-    test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=1000, shuffle=True, num_workers=8)
-    # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=1000, shuffle=True, num_workers=8)
-
+    train_data_clean_loader = DataLoader(dataset=train_data_clean,batch_size=64,shuffle=True)
+    # train_data_dirty_loader = DataLoader(dataset=train_data_dirty,batch_size=64,shuffle=True)
+    test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=64, shuffle=True)
+    # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=64, shuffle=True)
 
     # CIFAR-10和MNIST不能同时训练
     # MNIST
@@ -150,10 +149,10 @@ def main():
     # test_data_orig = test_data
     # test_data_trig = ?
     #
-    # train_data_clean_loader = DataLoader(dataset=train_data_clean,batch_size=128,shuffle=True,num_workers=8)
-    # # train_data_dirty_loader = DataLoader(dataset=train_data_dirty,batch_size=128,shuffle=True,num_workers=8)
-    # test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=1000, shuffle=True, num_workers=8)
-    # # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=1000, shuffle=True, num_workers=8)
+    # train_data_clean_loader = DataLoader(dataset=train_data_clean,batch_size=64,shuffle=True)
+    # # train_data_dirty_loader = DataLoader(dataset=train_data_dirty,batch_size=64,shuffle=True)
+    # test_data_orig_loader = DataLoader(dataset=test_data_orig, batch_size=64, shuffle=True)
+    # # test_data_trig_loader = DataLoader(dataset=test_data_trig, batch_size=64, shuffle=True)
 
     # train
     print("start training: ")
