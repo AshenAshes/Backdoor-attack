@@ -1,18 +1,17 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.4.1)  23 APR 2020 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.11)  24 APR 2020 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **report.tex
 (./report.tex
-LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+LaTeX2e <2018-12-01>
 (./llncs.cls
 Document Class: llncs 2018/03/10 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
-(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -26,10 +25,10 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(c:/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@tracingmulticols=\count88
-\mult@box=\box26
+\mult@box=\box27
 \multicol@leftmargin=\dimen103
 \c@unbalance=\count89
 \c@collectmore=\count90
@@ -42,14 +41,13 @@ Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
 \postmulticols=\dimen107
 \multicolsep=\skip43
 \multicolbaselineskip=\skip44
-\partial@page=\box27
-\last@line=\box28
+\partial@page=\box28
+\last@line=\box29
 \maxbalancingoverflow=\dimen108
-\mult@rightbox=\box29
-\mult@grightbox=\box30
-\mult@gfirstbox=\box31
-\mult@firstbox=\box32
-\@tempa=\box33
+\mult@rightbox=\box30
+\mult@grightbox=\box31
+\mult@gfirstbox=\box32
+\mult@firstbox=\box33
 \@tempa=\box34
 \@tempa=\box35
 \@tempa=\box36
@@ -66,19 +64,19 @@ Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
 \@tempa=\box47
 \@tempa=\box48
 \@tempa=\box49
+\@tempa=\box50
 \c@columnbadness=\count94
 \c@finalcolumnbadness=\count95
 \last@try=\dimen109
 \multicolovershoot=\dimen110
 \multicolundershoot=\dimen111
-\mult@nat@firstbox=\box50
-\colbreak@box=\box51
+\mult@nat@firstbox=\box51
+\colbreak@box=\box52
 \mc@col@check@num=\count96
 )
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/aliascnt.sty
-Package: aliascnt 2016/05/16 v1.4 Alias counters (HO)
-
-(c:/texlive/2018/texmf-dist/tex/latex/carlisle/remreset.sty))
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
+)
 \c@chapter=\count97
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -107,10 +105,10 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@@auth=\count100
 \c@auco=\count101
 \instindent=\dimen123
-\authrun=\box52
+\authrun=\box53
 \authorrunning=\toks14
 \tocauthor=\toks15
-\titrun=\box53
+\titrun=\box54
 \titlerunning=\toks16
 \toctitle=\toks17
 \c@theorem=\count102
@@ -130,30 +128,31 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@remark=\count116
 \headlineindent=\dimen124
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (./report.aux)
+)
+(./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -164,12 +163,75 @@ LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen127
+\scratchbox=\box55
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen128
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks20
+) (e:/mylatex/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -178,26 +240,102 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 39.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-File: fig1.eps Graphic file (type eps)
-<fig1.eps>
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 39.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 39.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 39.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
+(e:/mylatex/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+
+
+LaTeX Warning: Citation `h1' on page 1 undefined on input line 51.
+
+
+LaTeX Warning: Citation `h2' on page 1 undefined on input line 51.
+
+
+LaTeX Warning: Citation `h3' on page 1 undefined on input line 53.
+
+
+LaTeX Warning: Citation `h4' on page 1 undefined on input line 53.
 
 [1
 
-] [2] (./report.aux) ) 
-Here is how much of TeX's memory you used:
- 1067 strings out of 492970
- 13205 string characters out of 6137299
- 87671 words of memory out of 5000000
- 5098 multiletter control sequences out of 15000+600000
- 5551 words of font info for 31 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 28i,8n,21p,280b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
+{e:/mylatex/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-Output written on report.pdf (2 pages).
+LaTeX Warning: Citation `h5' on page 2 undefined on input line 60.
+
+
+LaTeX Warning: Citation `h3' on page 2 undefined on input line 62.
+
+
+LaTeX Warning: Citation `h6' on page 2 undefined on input line 62.
+
+
+LaTeX Warning: Citation `h4' on page 2 undefined on input line 64.
+
+
+LaTeX Warning: Citation `h7' on page 2 undefined on input line 66.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Package epstopdf Info: Source file: <fig1.eps>
+(epstopdf)                    date: 2020-04-24 00:01:11
+(epstopdf)                    size: 357553 bytes
+(epstopdf)             Output file: <fig1-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-04-24 00:02:13
+(epstopdf)                    size: 36486 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf 
+fig1.eps>
+(epstopdf)             \includegraphics on input line 110.
+Package epstopdf Info: Output file is already uptodate.
+<fig1-eps-converted-to.pdf, id=19, 345.29pt x 142.5325pt>
+File: fig1-eps-converted-to.pdf Graphic file (type pdf)
+<use fig1-eps-converted-to.pdf>
+Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 110.
+(pdftex.def)             Requested size: 347.12354pt x 143.29115pt.
+
+[3 <./fig1-eps-converted-to.pdf>] [4] (./report.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1889 strings out of 492623
+ 26276 string characters out of 6129530
+ 100258 words of memory out of 5000000
+ 5793 multiletter control sequences out of 15000+600000
+ 8147 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,8n,25p,1092b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+<e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+><e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<e:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><e
+:/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:
+/mylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/m
+ylatex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><e:/myla
+tex/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><e:/mylatex
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><e:/mylatex/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><e:/mylatex/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><e:/mylatex/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><e:/mylatex/texlive
+/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><e:/mylatex/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (4 pages, 197020 bytes).
+PDF statistics:
+ 82 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
