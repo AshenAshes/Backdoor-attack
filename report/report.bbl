@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{zhu2018implementation}
 Zijiang Zhu, Xiaoguang Deng, Yi~Hu, Dong Liu, and Junshan Li.
@@ -46,6 +46,29 @@ Bolun Wang, Yuanshun Yao, Shawn Shan, Huiying Li, Bimal Viswanath, Haitao
   networks.
 \newblock In {\em 2019 IEEE Symposium on Security and Privacy (SP)}, pages
   707--723. IEEE, 2019.
+
+\bibitem{m1}
+Y.~Le Cun, B.~Boser, J.~S. Denker, R.~E. Howard, W.~Habbard, L.~D. Jackel, and
+  D.~Henderson.
+\newblock {\em Handwritten Digit Recognition with a Back-Propagation Network},
+  page 396–404.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1990.
+
+\bibitem{m2}
+Yann Lecun, Leon Bottou, Y.~Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86:2278 -- 2324, 12 1998.
+
+\bibitem{m3}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{m4}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
 
 \bibitem{krizhevsky2009learning}
 Alex Krizhevsky, Geoffrey Hinton, et~al.
